@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    image: mysql_revised
+    network_mode: "host"
+    environment:
+      MYSQL_ROOT_PASSWORD: "toor"
+    volumes:
+      - my-datavolume:/var/lib/mysql
+volumes:
+  my-datavolume: 

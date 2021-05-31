@@ -1,0 +1,19 @@
+- name: Deploy Docker Compose
+  hosts: mysql
+  
+  tasks:
+    - copy:
+        src: /home/clarge/Ansible/docker-compose.yml
+        dest: /home/clarge/docker/docker-compose.yml
+      become: yes
+
+    - name: Execute docker compose file
+      shell: "docker-compose up -d"
+      args:
+        chdir: /home/clarge/docker/
+      become: yes
+      
+
+
+
+
